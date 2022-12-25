@@ -1,7 +1,8 @@
 {
   "name": "react-boilerplate",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "homepage": "https://cqhung1412.github.io/react-boilerplate",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +10,9 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
@@ -30,6 +33,7 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "@vitest/coverage-c8": "^0.26.2",
     "@vitest/ui": "^0.26.2",
+    "gh-pages": "^4.0.0",
     "less": "^4.1.3",
     "react-test-renderer": "^18.2.0",
     "typescript": "^4.9.3",
