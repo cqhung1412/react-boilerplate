@@ -1,11 +1,9 @@
-name: Deploy
+name: Build and Test
 
 on:
-  push:
+  pull_request:
     branches: 
       - master
-  workflow_dispatch:
-
 
 jobs:
   build_test:
@@ -29,8 +27,5 @@ jobs:
         run: pnpm install
       - name: Build application
         run: pnpm run build
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./dist  
+      - name: Test application
+        run: pnpm run test
