@@ -1,10 +1,10 @@
 import { defineConfig } from "vitest/config";
+import { splitVendorChunkPlugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: '/react-boilerplate/',
+  plugins: [react(), splitVendorChunkPlugin()],
   test: {
     coverage: {
       reporter: ["html"],

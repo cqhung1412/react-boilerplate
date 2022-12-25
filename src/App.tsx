@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Switch } from "wouter";
 import { Button } from "antd";
 
 const Home = () => (
@@ -18,10 +18,22 @@ const About = () => (
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-    </Routes>
+    <>
+      <Switch>
+        <Route path="/">
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+          <Home />
+        </Route>
+        <Route path="/about">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <About />
+        </Route>
+      </Switch>
+    </>
   );
 }
 

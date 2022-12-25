@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
 
 import App from "./App";
@@ -20,10 +19,8 @@ const theme = {
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ConfigProvider theme={theme}>
-        <App />
-      </ConfigProvider>
-    </BrowserRouter>
+    <ConfigProvider theme={theme}>
+      <App />
+    </ConfigProvider>
   </React.StrictMode>
 );
